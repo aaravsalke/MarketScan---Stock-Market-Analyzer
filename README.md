@@ -83,4 +83,4 @@ Later modules will add summaries, sentiment, and `portfolio/`.
 
 ## Data source
 
-Quotes, charts, and news come from **Yahoo Finance** through the free `yfinance` library. No API key is required.
+Quotes, charts, and news come from **Yahoo Finance** through the free `yfinance` library. No API key is currently required. API Key will be required in the future.

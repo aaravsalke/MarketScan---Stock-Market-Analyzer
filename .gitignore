@@ -1,0 +1,44 @@
+# =====================================================
+# MarketScan — .gitignore
+# Everything listed here will NOT be uploaded to GitHub
+# =====================================================
+
+# --- Secrets & API keys (NEVER upload these!) ---
+.env
+
+# --- Python virtual environment (too large for GitHub) ---
+.venv/
+venv/
+env/
+
+# --- Python cache files (auto-generated, not needed) ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# --- User data files (personal portfolio / watchlist data) ---
+# These reset automatically for every new user.
+# .gitkeep preserves the empty data/ folder structure.
+data/portfolio.json
+data/transactions.json
+data/watchlist.json
+!data/.gitkeep
+
+# --- VS Code workspace settings (keep launch/settings for contributors) ---
+# Uncomment below if you don't want to share your VS Code config:
+# .vscode/
+
+# --- OS junk files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Jupyter notebooks (not used in this project) ---
+.ipynb_checkpoints/
+
+# --- Build / dist artifacts ---
+dist/
+build/
+*.egg-info/

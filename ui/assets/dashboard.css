@@ -1,0 +1,692 @@
+/* dashboard.css
+   WHY: All visual styling for MarketScan lives here.
+*/
+
+/* =====================================================================
+   GLOBAL & BODY
+   ===================================================================== */
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    background: #0b1220;
+    color: #e2e8f0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, p {
+    margin-top: 0;
+}
+
+a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =====================================================================
+   PAGE WRAPPER
+   ===================================================================== */
+
+.page {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 24px 20px 64px 20px;
+}
+
+/* =====================================================================
+   HERO / HEADER
+   ===================================================================== */
+
+.hero {
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+    color: #f8fafc;
+}
+
+.hero-subtitle {
+    color: #94a3b8;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+/* =====================================================================
+   CARD SYSTEM
+   ===================================================================== */
+
+.card {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #f8fafc;
+}
+
+/* AI Executive Summary Card styling */
+.ai-card {
+    background: linear-gradient(135deg, #111827 0%, #0f172a 100%);
+    border: 1px solid #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+}
+
+.ai-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.ai-badge-active {
+    background: rgba(139, 92, 246, 0.2);
+    color: #a78bfa;
+    border: 1px solid #8b5cf6;
+}
+
+.ai-badge-local {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid #f59e0b;
+}
+
+.ai-summary-text {
+    color: #e2e8f0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* =====================================================================
+   SEARCH & INPUT STYLING (HIGH CONTRAST DARK THEME)
+   ===================================================================== */
+
+.search-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-input, .trade-input {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+    border: 1px solid #475569 !important;
+    border-radius: 10px !important;
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+    outline: none !important;
+    box-sizing: border-box;
+}
+
+.search-input::placeholder, .trade-input::placeholder {
+    color: #94a3b8 !important;
+    opacity: 1 !important;
+}
+
+.search-input:focus, .trade-input:focus {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25) !important;
+}
+
+/* =====================================================================
+   STEPPER ROW (- / + SHARE BUTTONS)
+   ===================================================================== */
+
+.stepper-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.stepper-btn {
+    background: #334155 !important;
+    color: #ffffff !important;
+    border: 1px solid #475569 !important;
+    border-radius: 8px !important;
+    width: 38px;
+    height: 38px;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+}
+
+.stepper-btn:hover {
+    background: #0ea5e9 !important;
+    border-color: #38bdf8 !important;
+    color: #0b1220 !important;
+}
+
+.stepper-input {
+    flex: 1;
+    text-align: center;
+    font-weight: 700;
+    height: 38px;
+}
+
+/* =====================================================================
+   DASH DROPDOWN (REACT-SELECT & VIRTUALIZED-SELECT) 100% DARK THEME
+   Completely themes all dropdowns, search boxes, and popup menus!
+   ===================================================================== */
+
+/* 1. Main Closed Dropdown Container */
+.Select,
+.Select-control,
+.dash-dropdown,
+.custom-dropdown,
+div[class*="Select"],
+div[class*="select__control"],
+div[class*="select__value-container"] {
+    background-color: #1e293b !important;
+    background: #1e293b !important;
+    border: 1px solid #475569 !important;
+    border-radius: 10px !important;
+    color: #ffffff !important;
+    min-height: 42px !important;
+    box-shadow: none !important;
+}
+
+/* 2. Text of Currently Selected Value */
+.Select-value,
+.Select-value-label,
+div[class*="select__single-value"],
+.Select-value-label * {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+
+/* 3. Placeholder Text */
+.Select-placeholder,
+div[class*="select__placeholder"] {
+    color: #94a3b8 !important;
+    font-size: 14px !important;
+    line-height: 42px !important;
+}
+
+/* 4. Dropdown Outer Popup Menu & Child Elements */
+.Select-menu-outer,
+.Select-menu,
+div[class*="select__menu"],
+div[class*="select__menu-list"],
+div[class*="VirtualizedSelect"],
+.Select-menu-outer div,
+.Select-menu div,
+div[class*="VirtualizedSelect"] div {
+    background-color: #0f172a !important;
+    background: #0f172a !important;
+    border-color: #334155 !important;
+    color: #f8fafc !important;
+}
+
+.Select-menu-outer {
+    border: 1px solid #334155 !important;
+    border-radius: 10px !important;
+    z-index: 9999 !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7) !important;
+    overflow: hidden !important;
+}
+
+/* 5. Search Input Box inside Open Dropdown Popup */
+.Select-menu-outer input,
+.Select-menu input,
+.Select-input > input,
+div[class*="select__input"] > input,
+div[class*="Select-input"] > input {
+    background-color: #1e293b !important;
+    background: #1e293b !important;
+    color: #ffffff !important;
+    border: 1px solid #475569 !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+    outline: none !important;
+    margin: 6px !important;
+    width: calc(100% - 12px) !important;
+    box-sizing: border-box !important;
+}
+
+.Select-menu-outer input::placeholder,
+.Select-menu input::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* 6. Individual Option Rows in Popup Menu */
+.Select-option,
+.VirtualizedSelectOption,
+div[class*="select__option"] {
+    background-color: #0f172a !important;
+    background: #0f172a !important;
+    color: #f8fafc !important;
+    padding: 11px 16px !important;
+    font-size: 14px !important;
+    border-bottom: 1px solid #1e293b !important;
+    cursor: pointer !important;
+    transition: background 0.12s ease !important;
+}
+
+/* 7. Hovered / Focused Option Row */
+.Select-option.is-focused,
+.VirtualizedSelectFocusedOption,
+.Select-option:hover,
+.VirtualizedSelectOption:hover,
+div[class*="select__option--is-focused"] {
+    background-color: #1e293b !important;
+    background: #1e293b !important;
+    color: #38bdf8 !important;
+}
+
+/* 8. Active / Selected Option Row */
+.Select-option.is-selected,
+.VirtualizedSelectSelectedOption,
+div[class*="select__option--is-selected"] {
+    background-color: #0284c7 !important;
+    background: #0284c7 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+/* 9. Dropdown Arrow & Clear Icons */
+.Select-arrow,
+.Select-clear,
+.Select-arrow-zone,
+div[class*="select__indicator"] {
+    color: #94a3b8 !important;
+    border-color: #94a3b8 transparent transparent !important;
+}
+
+.Select-clear-zone:hover {
+    color: #f87171 !important;
+}
+
+/* =====================================================================
+   BUTTONS
+   ===================================================================== */
+
+.primary-button {
+    background: #0ea5e9 !important;
+    color: #0b1220 !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    height: 42px;
+    padding: 0 22px !important;
+    cursor: pointer;
+    font-size: 14px !important;
+    transition: all 0.15s ease;
+}
+
+.primary-button:hover {
+    background: #38bdf8 !important;
+    transform: translateY(-1px);
+}
+
+.secondary-button {
+    background: #1e293b !important;
+    color: #f8fafc !important;
+    font-weight: 600 !important;
+    border: 1px solid #475569 !important;
+    border-radius: 10px !important;
+    height: 38px;
+    padding: 0 18px !important;
+    cursor: pointer;
+    font-size: 13px !important;
+    transition: all 0.15s ease;
+}
+
+.secondary-button:hover {
+    background: #334155 !important;
+    border-color: #38bdf8 !important;
+}
+
+.view-button {
+    background: rgba(14, 165, 233, 0.15) !important;
+    color: #38bdf8 !important;
+    font-weight: 600 !important;
+    border: 1px solid rgba(56, 189, 248, 0.4) !important;
+    border-radius: 8px !important;
+    padding: 6px 14px !important;
+    cursor: pointer;
+    font-size: 12px !important;
+    transition: all 0.15s ease;
+}
+
+.view-button:hover {
+    background: #0ea5e9 !important;
+    color: #0b1220 !important;
+}
+
+.buy-button {
+    background: #16a34a !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    height: 40px;
+    padding: 0 24px !important;
+    cursor: pointer;
+    font-size: 14px !important;
+    margin-top: 12px;
+    width: 100%;
+    transition: background 0.15s;
+}
+
+.buy-button:hover {
+    background: #22c55e !important;
+}
+
+.sell-button {
+    background: #dc2626 !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    height: 40px;
+    padding: 0 24px !important;
+    cursor: pointer;
+    font-size: 14px !important;
+    margin-top: 12px;
+    width: 100%;
+    transition: background 0.15s;
+}
+
+.sell-button:hover {
+    background: #ef4444 !important;
+}
+
+.remove-button {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #f87171 !important;
+    border: 1px solid rgba(248, 113, 113, 0.4) !important;
+    border-radius: 8px !important;
+    padding: 6px 12px !important;
+    cursor: pointer;
+    font-size: 12px !important;
+    transition: all 0.15s ease;
+}
+
+.remove-button:hover {
+    background: #ef4444 !important;
+    color: #ffffff !important;
+}
+
+/* =====================================================================
+   STATS GRID & STAT BOXES
+   ===================================================================== */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+}
+
+.stat-box {
+    background: #0f172a;
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px solid #1e293b;
+}
+
+.stat-label {
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+/* =====================================================================
+   STATUS TEXT & HELPERS
+   ===================================================================== */
+
+.status-text {
+    color: #94a3b8;
+    margin: 6px 0 0 0;
+    font-size: 13px;
+}
+
+.ma-label {
+    margin: 0;
+    font-size: 16px;
+    color: #38bdf8;
+    font-weight: 700;
+}
+
+.note {
+    color: #fbbf24;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+/* =====================================================================
+   TWO-COLUMN LAYOUT
+   ===================================================================== */
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+@media (max-width: 900px) {
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================================================
+   NEWS CARDS & SUMMARY CARDS
+   ===================================================================== */
+
+.news-card, .summary-card {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.news-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: #f1f5f9;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.news-meta {
+    color: #64748b;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.news-summary {
+    color: #cbd5e1;
+    font-size: 13px;
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.news-link {
+    font-size: 12px;
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+.relevance-badge {
+    background: #1e293b;
+    color: #94a3b8;
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* =====================================================================
+   ENHANCED WATCHLIST CARDS
+   ===================================================================== */
+
+.watchlist-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 12px;
+    transition: border-color 0.15s ease;
+}
+
+.watchlist-card:hover {
+    border-color: #334155;
+}
+
+.watchlist-card-active {
+    border-color: #38bdf8 !important;
+    background: #111e36;
+}
+
+.watchlist-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 140px;
+}
+
+.watchlist-ticker {
+    font-weight: 800;
+    font-size: 17px;
+    color: #f8fafc;
+}
+
+.watchlist-company {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.watchlist-price-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 110px;
+}
+
+.watchlist-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.watchlist-change {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.watchlist-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* =====================================================================
+   TRADE SECTION (BUY/SELL)
+   ===================================================================== */
+
+.trade-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+@media (max-width: 700px) {
+    .trade-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.trade-box {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.trade-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.trade-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* =====================================================================
+   DATA TABLES (HOLDINGS & TRANSACTIONS)
+   ===================================================================== */
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.data-table th {
+    background: #0f172a;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #1e293b;
+}
+
+.data-table td {
+    padding: 11px 12px;
+    border-bottom: 1px solid #1e293b;
+    color: #e2e8f0;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tr:hover td {
+    background: #1e293b;
+}

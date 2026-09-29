@@ -1,0 +1,7 @@
+dash
+plotly
+pandas
+yfinance
+requests
+python-dotenv
+matplotlib
